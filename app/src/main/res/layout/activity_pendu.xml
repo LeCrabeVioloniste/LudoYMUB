@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:hapticFeedbackEnabled="false"
+    android:paddingBottom="10dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        app:srcCompat="@drawable/bloc" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pendu_0" />
+
+    <TextView
+        android:id="@+id/tvMot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/motIni"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+
+        android:id="@+id/tvMotATrouver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    <ProgressBar
+        android:id="@+id/progTimer"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:max="30"
+        android:progress="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progTimer" />
+
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/tvMotATrouver"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="46dp"
+        android:clickable="true"
+        android:background="@drawable/ardoise"
+        app:backgroundTint="@drawable/ardoise"
+        android:text="Jouer ? "
+        android:textColor="#F8F4F4"
+        android:textSize="24sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="A"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="B" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="C" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="D" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="E" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="F" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="G" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="H" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="I" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="J" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="K"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="L" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="M" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="N" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="O" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="P" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="Q" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="R" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="S" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="T" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="U" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="V" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="W" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="X" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="Y" />
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:onClick="onClickbtLettre"
+                android:text="Z" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMessageBas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+</RelativeLayout>

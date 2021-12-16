@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Ludo</string>
+    <string name="menu_settings">Settings</string>
+    <string name="btJouer">Jouer</string>
+    <string name="btNouveauJeu">Nouveau jeu</string>
+    <string name="btAtout">Atout</string>
+    <string name="btJoueur1">Joueur 1</string>
+    <string name="btJoueur2">Joueur 2</string>
+    <string name="btAucunJoueur">Aucun joueur</string>
+    <string name="txtCarte1">carte du joueur 1</string>
+    <string name="txtCarte2">carte du joueur 2</string>
+    <string name="txtJ1">As de pique : 10 points</string>
+    <string name="txtJ2">7 de coeur : 7 points</string>
+    <string name="txtScore1">0 points</string>
+    <string name="txtScore2">0 points</string>
+    <string name="txtResultat">Qui va gagner les points ?</string>
+    <string name="edtTotalPoints">Total ?</string>
+    <string name="txtReponses">Tes réponses correctes</string>
+    <string name="txtNbRepCorrectes">0 / 26</string>
+
+    //Valeurs pour compter//
+    <string name="btValider">Valider</string>
+    <string name="btAnimaux">Animaux</string>
+    <string name="txtCarte">Carte mouton</string>
+    <string name="txtResultatCompter">Combien de mouton sur la carte ?</string>
+    <string name="edtNombreMouton">Nombre ?</string>
+    <string name="txtNbRepCorrectesCompter">0 / 10</string>
+
+    <string name="menu_parametres">Paramètres</string>
+    <string name="menu_chercher">Chercher</string>
+    <string name="menu_compter">Compter</string>
+    <string name="menu_bataille">Bataille</string>
+    <string name="menu_pendu">Pendu</string>
+
+    //Valeurs pour Pendu//
+    <string name="appname">Pendu</string>
+    <string name="motIni">      </string>
+    <string name="nouveauJeu">Nouvelle partie</string>
+    <string name="gagner">Gagnée</string>
+    <string name="perdu">Perdu</string>
+    <string name="partieFini">La partie est terminer, joue à nouveaux !</string>
+    <string name="motCacher">Le mot étais: #word#</string>
+    <string name="nouvelleLettre">Essaye une autre lettre</string>
+    <string name="lettreUtiliser">La lettre est déjà utilisé</string>
+
+    <!--    préférences-->
+    <string name="prefs_mes_parametres">Mes paramètres</string>
+    <string name="prefs_theme">Thème vert et rose</string>
+    <string name="prefs_nom_joueur">Nom joueur</string>
+    <string name="prefs_non_renseigne">Non renseigné</string>
+    <string name="prefs_mes_scores">Mes scores</string>
+
+    <!--    main-->
+    <string name="txtSalut">Salut</string>
+    <string name="txtPremiereUtilisation">Tu peux mettre à jour tes paramètres.</string>
+
+</resources>

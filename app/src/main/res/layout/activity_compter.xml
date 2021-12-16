@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_padding"
+    android:paddingTop="@dimen/activity_vertical_padding"
+    android:paddingRight="@dimen/activity_horizontal_padding"
+    android:paddingBottom="@dimen/activity_vertical_padding"
+    tools:context=".CompterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btNouveauJeu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickbtNouveauJeu"
+            android:text="@string/btNouveauJeu"/>
+
+        <Button
+            android:id="@+id/btAnimaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/mouton"
+            android:gravity="center_horizontal"
+            android:onClick="onClickbtAnimaux"
+            android:text="@string/btAnimaux"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/white"
+            app:backgroundTintMode="multiply"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imgCarteMouton"
+            android:layout_width="170dp"
+            android:layout_height="180dp"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/txtCarte"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/back" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etNbMouton"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:ems="10"
+        android:hint="@string/edtNombreMouton"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tvResultatCompter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"/>
+
+    <Button
+        android:id="@+id/btValider"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="0dp"
+        android:onClick="onClickbtValider"
+        android:text="@string/btValider" />
+
+    <Button
+        android:id="@+id/btJouer"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="0dp"
+        android:onClick="onClickbtJouer"
+        android:text="@string/btJouer"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tvReponses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtReponses"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvNbRepCorrectesCompter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/txtNbRepCorrectesCompter"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
