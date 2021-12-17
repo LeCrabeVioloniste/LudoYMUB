@@ -2,13 +2,43 @@ package fr.siomd.ludo.entity;
 
 import java.util.ArrayList;
 
+/**
+ * <b>La classe Bourreau représente un bourreau</b>
+ * Un bourreau est caractérisé par les informations suivantes :
+ * <ul>
+ *     <li>un nombre max de lettre au rebut</li>
+ *     <li>un juge</li>
+ *     <li>un mot a chercher de type Mot</li>
+ *     <li>un contenu du mot a chercher en majuscule</li>
+ *     <li>un mot en cours avec les lettres cachées non trouvé</li>
+ *     <li>une liste de lettre au rebut</li>
+ *     <li>une liste de lettre trouvée</li>
+ * </ul>
+ *
+ * @version 1.0
+ */
 public class Bourreau {
+    /**
+     * le  nombre max de lettre au rebut
+     */
     public static final int MAX_REBUT = 8;    // nombre maximum de lettres au rebut
 
-    private Juge leJuge;           // le juge
-    private Mot leMot;             // mot à chercher de type Mot
-    private String leMotCherche;   // contenu du mot à chercher en majuscules
-    private String leMotEnCours;  // mot avec des _ à la place de chaque lettre non trouvée
+    /**
+     * le juge
+     */
+    private Juge leJuge;
+    /**
+     * le mot à chercher de type Mot
+     */
+    private Mot leMot;
+    /**
+     * le contenu du mot à chercher en majuscules
+     */
+    private String leMotCherche;
+    /**
+     * le mot avec des _ à la place de chaque lettre non trouvée
+     */
+    private String leMotEnCours;  //
     private ArrayList<Character> lesLettresAuRebut = new ArrayList<Character>();  // liste des lettres au rebut
     private ArrayList<Character> lesLettresTrouvees = new ArrayList<Character>(); // liste des lettres trouvées
 
@@ -24,7 +54,9 @@ public class Bourreau {
 
     // retourne le mot en cours (avec des _ ) qui est à afficher
     public String getLeMotEnCours() {
-        return leMotEnCours;
+        String leMotEnCoursEspace;
+        leMotEnCoursEspace= leMotEnCours.replace(""," ").trim();
+        return leMotEnCoursEspace;
     }
 
     public ArrayList<Character> leMotChercheTableau(){
@@ -58,7 +90,7 @@ public class Bourreau {
         leMotEnCours = "";
         // définir leMotEnCours : autant de caractères _  que de lettres dans le mot à trouver
         for (int i = 0; i < leMotCherche.length(); i++) {
-            leMotEnCours += '_';
+            leMotEnCours += "_";
         }
     }
 

@@ -2,14 +2,11 @@ package fr.siomd.ludo.entity;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.lang.Object;
 
-import fr.siomd.ludo.R;
+
 import fr.siomd.ludo.dataaccess.DicoXml;
-import androidx.appcompat.app.AppCompatActivity;
 
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
 
 public class Juge {
     //générateur de nombres pseudo-aléatoires
@@ -48,31 +45,29 @@ public class Juge {
         numeroThemeSelectionne = unNumeroTheme;
     }
 
-    public Juge()   {
+    public Juge(XmlPullParser monXmlPullParser)   {
         leHasard = new Random();
         setNumeroThemeSelectionne(-1);
-        lireThemes();
+        lireThemes(monXmlPullParser);
     }
 
     // lire les thèmes à partir du fichier XML pour positionner la liste lesThemes
-    private void lireThemes() {
-        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-        XmlPullParser
+    private void lireThemes(XmlPullParser monXmlPullParser) {
+        lesThemes = DicoXml.getLesThemes(monXmlPullParser);
 
-        lesThemes = DicoXml.getLesThemes(getRessource().getXml(R.xml.dico));
     }
 
     //  si aucun thème sélectionné, sélectionner un thème au hasard
     //  donner un mot au hasard dans le thème (sélectionné ou pris au hasard)
     public Mot donnerMot()  {
         if(numeroThemeSelectionne == -1){
-            int indHasard = leHasard.nextInt(lesThemes.size()-1);
+            int indHasard = leHasard.nextInt(lesThemes.size());
             Theme leThemeSelectionne = lesThemes.get(indHasard);
-            indHasard = leHasard.nextInt(leThemeSelectionne.getLesMots().size()-1);
+            indHasard = leHasard.nextInt(leThemeSelectionne.getLesMots().size());
             return leThemeSelectionne.getLesMots().get(indHasard);
         } else {
             Theme leThemeSelectionne = lesThemes.get(numeroThemeSelectionne);
-            int indHasard = leHasard.nextInt(leThemeSelectionne.getLesMots().size()-1);
+            int indHasard = leHasard.nextInt(leThemeSelectionne.getLesMots().size());
             return leThemeSelectionne.getLesMots().get(indHasard);
         }
     }

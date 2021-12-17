@@ -3,23 +3,19 @@ package fr.siomd.ludo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageSwitcher;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-import fr.siomd.ludo.dataaccess.DicoXml;
 import fr.siomd.ludo.databinding.ActivityPenduBinding;
-import fr.siomd.ludo.entity.Mot;
-import fr.siomd.ludo.entity.Theme;
+import fr.siomd.ludo.entity.Juge;
+import fr.siomd.ludo.entity.Bourreau;
 
 public class PenduActivity extends AppCompatActivity {
 
     private ActivityPenduBinding ui;
-    private ArrayList<Theme> lesThemes;
-    private ImageView img;
+    private Juge monJuge;
+    private Bourreau monBourreau;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,47 +24,32 @@ public class PenduActivity extends AppCompatActivity {
         ui = ActivityPenduBinding.inflate(getLayoutInflater());
         setContentView(ui.getRoot());
 
-        // récuperer le dictionnaire de thèmes
-        lesThemes = DicoXml.getLesThemes(getResources().getXml(R.xml.dico));
 
-        // afficher liste juste pour vérification
-        for (Theme unTheme : lesThemes){
-            Log.i("DICO-liste", "Theme = " + unTheme.getNom());
-            for (Mot unMot : unTheme.getLesMots()) {
-                Log.i("DICO-liste", "Mot = " + unMot.getContenu() + " - " + unMot.getNbPoints());
-            }
-        }
+        monJuge = new Juge(getResources().getXml(R.xml.dico));
+        monBourreau = new Bourreau(monJuge);
+        // afficher le mot en cours (avec des _ pour chaque lettre non trouvée)
+        ui.tvMot.setText(monBourreau.getLeMotEnCours());
 
-        private void updateImg(int play) {
-            int resImg = getResources().getIdentifier("pendu_" + play, "drawable",
-                    getPackageName());
+    }
 
-            img.setImageResource(resImg);
-        }
+    public void onClickbtStart(){
+        ui.btStart.setEnabled(false);
+        monBourreau.demarrer();
+    }
 
-        public void onClickbtLettre(View v) {
-            if (nbErreurs < MAX_ERREURS
-                    && !getString(R.string.gagner).equals(ui.tvMotATrouver.getText())) {
-                String letter = ((Button) v).getText().toString();
-                enter(letter);
-                ui.tvMot.setText(motTrouverContent());
-                updateImg(nbErreurs);
+    public void onClickbtLettre(View laVue){
+        CharSequence laLettre = ((Button)laVue).getText();
+        String ancienneLettreRebus = monBourreau.getLesLettresAuRebut();
+        monBourreau.executer(laLettre.charAt(0));
+        if(ancienneLettreRebus != monBourreau.getLesLettresAuRebut()){
 
-                // vérifier si le mot est trouvé
-                if (motTrouver()) {
-                    Toast.makeText(this, R.string.gagner, Toast.LENGTH_SHORT).
-                            show();
-                    motATrouverTv.setText(R.string.gagner);
-                } else {
-                    if (nbErreurs >= MAX_ERREURS) {
-                        Toast.makeText(this, R.string.perdu, Toast.LENGTH_SHORT).show();
-                        ui.tvMotATrouver.setText(getString(R.string.motCacher).
-                                replace("#word#", motATrouver));
-                    }
-                }
-            } else {
-                Toast.makeText(this, R.string.partieFini, Toast.LENGTH_SHORT).show();
-            }
+        }else if(monBourreau.isGagne()){
+            Toast.makeText(getApplicationContext(), "Gagné avec " + monJuge.getScore() + "points!", Toast.LENGTH_LONG).show();
+
+        } else if(monBourreau.isPerdu()){
+            Toast.makeText(getApplicationContext(), "Perdu mais réessaye encore!", Toast.LENGTH_LONG).show();
         }
     }
+
+
 }
